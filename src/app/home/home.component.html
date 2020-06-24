@@ -1,0 +1,35 @@
+<p>home works! {{email}}</p>
+<div class="col-md-10 col-md-offset-1">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">List of Items</h3>
+    </div>
+    <div class="panel-body" >
+      <button class="btn btn-danger" (click)="addItem()"> Add Item</button>
+      <div style="height: 450px; overflow-x: scroll; overflow-y: scroll;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="hidden">Id</th>
+            <th>User Email</th>
+            <th>List Of Items</th>
+            <th>Date Of Purchase</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td class="hidden">{{item.itemId}}</td>
+            <td>{{item.userEmail}}</td>
+            <td>{{item.listOfItems}}</td>
+            <td>{{item.dateOfPurchase}}</td>
+            <td>{{item.price}}</td>
+            <td><button class="btn btn-danger" (click)="deleteUser()"> Delete</button>
+              <button class="btn btn-primary" (click)=editItem(item) style="margin-left: 20px;"> Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
